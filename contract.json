@@ -1,0 +1,23 @@
+{
+    "Clause": "16.4",
+    "No": "Sup.001",
+    "Details": "The annual pricing review cannot increase prices by more than then latest published inflation rate in USA1",
+    "Critically": "High",
+    "Owner": "Max Jones, London",
+    "obligations":[
+        
+             {
+              "checkFrecuency":"'Annually, no later than 31 July'",
+              "details": "'Annual CPI Report'",
+              "provided": "'Finance Dept'",
+              "checkingMethod": "'Calculate % difference  between  previous  year pricing and  any new pricing, compare against latest CPI figures'"
+             },
+             {
+                "checkFrecuency":"'Annually, no later than 31 July'",
+                "details": "'Annual CPI Report'",
+                "provided": "'Finance Dept'",
+                "checkingMethod": "'Calculate % difference  between  previous  year pricing and  any new pricing, compare against latest CPI figures'"
+            }
+    
+    ]
+}
