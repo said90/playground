@@ -127,6 +127,14 @@ $(document).ready(function () {
 
   });
   
+$('#modalForm').draggable({
+  handle:".card-header"
+});
+
+$('#modal-task').draggable({
+  handle:".card-header"
+});
+
 $('#add-button').on('click',function(){
   $('#confirm-button').html( "Create");
   $('.card-title').html('Adding New Clause');

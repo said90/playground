@@ -1279,8 +1279,11 @@
             <button id="add-button" class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modalForm" >Add New Clause</button>
 
 							<div class="card-body">
+                <div class="col-md-12 form-row" >  
+                  
+                <div class="col-md-8">
 
-                <table class="table table-bordered table-striped mb-0" id="table"> 
+                  <table class="table table-bordered table-striped mb-0" id="table"> 
                   <thead>
 										<tr>
 											<th>Clause</th>
@@ -1292,10 +1295,10 @@
                       
 										</tr>
 									</thead>
-                </table>
-                <button class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
+                  </table>
+                  <button class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
 
-                <table class="table table-bordered table-striped mb-0" id="table-task"> 
+                  <table class="table table-bordered table-striped mb-0" id="table-task"> 
                   <thead>
 										<tr>
 											<th>Check Frequency</th>
@@ -1305,7 +1308,13 @@
                   
 										</tr>
 									</thead>
-                </table>
+                  </table>
+                </div>
+                <div class="col-md-4">
+                  <embed   src="sample.pdf" type="application/pdf" width="640" height="600"></embed>
+
+                </div>
+                </div>
               </div>
 
               <div id="modalForm" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
