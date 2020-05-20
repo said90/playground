@@ -1250,17 +1250,19 @@
             </div>
           </header>
 
-          <!-- start: page -->
-          <section class="card">
-            <div class="card-body">
-              <div class="row" style="margin: 2rem;">
+            <section class="card">
+              <div class="card-body row"> 
+                <div class="card">
 
-                <form class="form-horizontal form-bordered" action="#">
-
-                  <div class="col-lg-12 row mb-lg">
+                </div>
+                <div class="col-md-4">
+                  <div class="card-header">
+                      <p class="card-title" style="text-align: center;"> Contract Information</p>
+                  </div>
+                  <div class="form-group card-body">
                     <label class="control-label mb-lg"> Contract</label>
                     <select id="contract-select" data-plugin-selectTwo class="form-control populate">
-						          <option selected="true" disabled="disabled">Select Contract</option>    
+                      <option selected="true" disabled="disabled">Select Contract</option>    
                       <option value="A">ABC Co Software Licensing Agreement ABC 16/2019 Schedule
                         A</option
                       >
@@ -1271,18 +1273,24 @@
                         C</option
                       >
                     </select>
+                    
                   </div>
-                </form>
-              </div>
-			  	<div class="row" style="margin: 2rem;">
-					<div class="col">
-            <button id="add-button" class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modalForm" >Add New Clause</button>
+                  <div class="col-lg-12">
+                    <embed class="col-lg-12"   src="sample.pdf" type="application/pdf" width="800" height="600"></embed>
+                  </div>
+                </div>
 
-							<div class="card-body">
-                <div class="col-md-12 form-row" >  
-                  
-                <div class="col-md-8">
 
+                <div class="col-md-8 ">
+
+                  <div class="card-header" style="text-align: center;">
+                     <p class="card-title"> Contract Clauses</p>
+                  </div>
+                  <div class="card-body">
+
+                  <div class="col-md-12 row" style="margin-bottom: 1rem;">
+                    <button id="add-button" class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modalForm" >Add New Clause</button>
+                  </div>
                   <table class="table table-bordered table-striped mb-0" id="table"> 
                   <thead>
 										<tr>
@@ -1296,31 +1304,35 @@
 										</tr>
 									</thead>
                   </table>
-                  <button class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
 
-                  <table class="table table-bordered table-striped mb-0" id="table-task"> 
-                  <thead>
-										<tr>
-											<th>Check Frequency</th>
-											<th>Details</th>
-											<th>Provided By</th>
-											<th>Checking Method</th>
+                  <div class="card-header" style="text-align: center;">
+                    <p class="card-title">Obligations</p> 
+                   </div>
+                   <div class="col-md-12 row" style="margin-bottom: 1rem;">
+                     <button class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
+                   </div>
+                   <table class="table table-bordered table-striped mb-0" id="table-task"> 
+                   <thead>
+                     <tr>
+                       <th>Check Frequency</th>
+                       <th>Details</th>
+                       <th>Provided By</th>
+                       <th>Checking Method</th>
+                     </tr>
+                   </thead>
+                   </table>
+                </div>
+
+
                   
-										</tr>
-									</thead>
-                  </table>
-                </div>
-                <div class="col-md-4">
-                  <embed   src="sample.pdf" type="application/pdf" width="640" height="600"></embed>
-
-                </div>
+                  <hr>
                 </div>
               </div>
 
               <div id="modalForm" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                                        <div class="modal-body">
+                <div class="modal-body">
 
                 <section class="card">
                   <header class="card-header">
@@ -1433,12 +1445,10 @@
                 </div>
                 </div>
               </div>
+            </section>
 
-					</div>
-				  </div>
-       
-            </div>
-          </section>
+          <!-- start: page -->
+      
 
           <!-- end: page -->
         </section>
