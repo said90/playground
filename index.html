@@ -1232,6 +1232,7 @@
         <!-- end: sidebar -->
 
         <section role="main" class="content-body">
+          
           <header class="page-header">
             <h2>Contract Information</h2>
 
@@ -1276,7 +1277,7 @@
                     
                   </div>
                   <div class="col-lg-12">
-                    <embed class="col-lg-12"   src="sample.pdf" type="application/pdf" width="800" height="600"></embed>
+                    <iframe src="ViewerJS/#../sample.pdf"  width='500' height='600' allowfullscreen webkitallowfullscreen></iframe>
                   </div>
                 </div>
 
@@ -1305,19 +1306,18 @@
 									</thead>
                   </table>
 
-                  <div class="card-header" style="text-align: center;">
-                    <p class="card-title">Obligations</p> 
-                   </div>
+                  
                    <div class="col-md-12 row" style="margin-bottom: 1rem;">
-                     <button class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
+                     <button id="btn-task" disabled class="momb-1 btn-primary mt-1 mr-1 modal-with-zoom-anim ws-normal btn btn-default"  data-toggle="modal" data-target="#modal-task" >Add New Task</button>
                    </div>
                    <table class="table table-bordered table-striped mb-0" id="table-task"> 
                    <thead>
                      <tr>
-                       <th>Check Frequency</th>
+                      <th>Check Frecuency</th>
                        <th>Details</th>
                        <th>Provided By</th>
                        <th>Checking Method</th>
+                       <th>Owner</th>
                      </tr>
                    </thead>
                    </table>
@@ -1423,19 +1423,17 @@
                       </div>
                       <div class="form-group">
                         <label for="inputAddress2">Owner</label>
-                        <input type="text" class="form-control" id="clause-owner" placeholder="Owner">
+                        <input type="text" class="form-control" id="clause-owner-task" placeholder="Owner">
                       </div>
 
                       <hr>
-                      <div class="form-row">
-                        
-                      </div>
+                     
                     </form>
                   </div>
                   <footer class="card-footer">
                     <div class="row">
                       <div class="col-md-12 text-right">
-                        <button id="confirm-button" class="btn btn-primary modal-confirm" >Add Task</button>
+                        <button id="confirm-button-task" class="btn btn-primary" >Add Task</button>
                         <button class="btn btn-default modal-dismiss" data-dismiss="modal">Cancel</button>
                       </div>
                     </div>
