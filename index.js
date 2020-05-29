@@ -2,8 +2,9 @@ var contracts=[
   {
     Clause: "16.4",
     No: "Sup.001",
-    Details:
-      "The annual pricing review cannot increase prices by more than then latest published inflation rate in USA1	",
+    Subject:"Clause Subject",
+    Summary:"Summary Clause",
+    Type:"Obligation",
     Critically: "High",
     Owner: "Max Jones, London",
     task:[
@@ -12,6 +13,7 @@ var contracts=[
       details: 'Annual CPI Report',
       provided: 'Finance Dept',
       checkingMethod: 'Calculate % difference  between  previous  year pricing and  any new pricing, compare against latest CPI figures',
+      checkingMethodType:'Systematically',
       owner:"John smith"
      }
     ]
@@ -19,8 +21,10 @@ var contracts=[
   {
     Clause: "29",
     No: "Jnt.001",
-    Details:
-      "Each aprty must promptly advise the other if their address for service of notices changes	",
+    Subject:"Clause Subject",
+    Summary:"Summary Clause",
+    Type:"Obligation",
+
     Critically: "Low",
     Owner: "Ian black, New York	",
     task:[
@@ -29,6 +33,8 @@ var contracts=[
       details: 'Quarterly software usage report',
       provided: 'IT Dept, Sydney',
       checkingMethod: 'Confirm receipt by cc of email to supplier advising quartely  license usage figures',
+      checkingMethodType:'Systematically',
+
       owner:"John smith"
      }
     ]
@@ -36,8 +42,10 @@ var contracts=[
   {
     Clause: "8.9(b)",
     No: "Org.001",
-    Details:
-      "The organization must submit a quarterly license usage report to the supplier within 10 bussines days of the end of each busssiness quarter	",
+    Subject:"Clause Subject",
+    Summary:"Summary Clause",
+    Type:"Obligation",
+
     Critically: "Medium",
     Owner: "Frank Saxon, Sydney",
     task:[
@@ -46,6 +54,8 @@ var contracts=[
         details: 'Curren head office address',
         provided: 'Legal  Dept, New York',
         checkingMethod: 'Standard email to suppliers advising the organization current address and requesting same from the supplier',
+        checkingMethodType:'Systematically',
+
         owner:"John smith"
        }
     ]
@@ -59,11 +69,18 @@ $(document).ready(function () {
     data: source,
     responsive: true,
     columns: [
-      { data: "checkFrecuency" },
       { data: "details" },
-      { data: "provided"},
+      { data: "checkingMethodType" },
       { data: "checkingMethod" },
-      { data: "owner" }
+      { data: "checkFrecuency" },
+
+      { data: "provided"},
+      { data: "owner" },
+      {
+        data: null,
+        defaultContent:
+          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
+      },
     ],           
     bDestroy: true,     
     paging: true,
@@ -76,13 +93,16 @@ var table = $("#table").DataTable({
     columns: [
       { data: "Clause" },
       { data: "No" },
-      { data: "Details" },
+      { data: "Subject" },
+      { data: "Summary" },
+      { data: "Type" },
+
       { data: "Critically" },
       { data: "Owner" },
       {
         data: null,
         defaultContent:
-          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> </a> <a class='delete-row'><i class='far fa-trash-alt'></i></a></td>",
+          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
       },
     ],                
     paging: true,
