@@ -1,0 +1,207 @@
+
+html, body {
+    background: #fff;
+}
+body {
+	font-size: 14px;    
+}
+.fs-13 {
+	font-size: 13px;
+}
+.fs-16 {
+	font-size: 16px;
+}
+.fs-24 {
+	font-size: 24px;
+}
+.header {
+    background: #FFF;
+    border-bottom: 0;
+    border-top: 0;
+    z-index: 1000;
+}
+.page-header {
+    border:0;
+	box-shadow: 0 0 0;
+}
+.topbar {
+	padding: 5px 0 10px 0;
+	background-color: #f8f9fa;
+	display: -webkit-flex; 
+    display: flex;
+}
+.topbar div {
+	-webkit-flex: 1;
+    -ms-flex: 1; 
+    flex: 1;
+}
+.right-nav {
+	text-align: right;
+}
+.right-nav .separator {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #F6F6F6), to(#EDEDED));
+    background-image: linear-gradient(#eee 60%, #ddd);
+    display: inline-block;
+    height: 100%;
+    margin: 0 25px 0;
+    width: 1px;
+	min-height: 40px;
+    vertical-align: middle;
+}
+
+.file-loader {
+	padding: 15px;
+	background-color: #ecedf0;
+}
+.custom-toggle .toggle label {
+	margin-bottom: 0;
+}
+.custom-toggle .toggle-content {
+	padding: 15px;
+	background-color: #fff;
+}
+.custom-toggle .toggle-primary .toggle label.heading {
+    color: #fff;
+	background-color: #0088cc;
+}/*
+.custom-toggle .toggle-primary .toggle label:before {
+    border: 6px solid transparent;
+    border-top-color: #FFF;
+}*/
+.custom-toggle .toggle-primary .toggle.toggle > label:before {
+    border: 6px solid transparent;
+    border-left-color: #fff;
+    content: '';
+    margin-top: -6px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+}
+.custom-toggle .toggle-primary .toggle.toggle.active > label:before {
+    border: 6px solid transparent;
+    border-top-color: #FFF;
+    margin-top: -3px;
+    right: 10px;
+}
+html .custom-toggle .toggle-primary .toggle label {
+    color: #777;
+}
+.custom-toggle .toggle-primary .toggle label.error {
+    color: #C10000;
+    font-size: 0.9em;
+    margin-top: -5px;
+    padding: 0;
+}
+.body-sign {
+	max-width: 100%;
+	background-color: #ecedf0;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+footer {
+	margin-top: 30px;
+	padding: 10px 0;
+}
+.dropzone .dz-default span {
+	font-size: 16px;
+    color: rgba(0, 0, 0, 4);
+}
+.dropzone {
+    background: rgba(0, 0, 0, .2) none repeat scroll 0 0;
+}
+
+.body-sign {
+	max-width: 100%;
+	background: url(../img/signing-contract.png);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.body-sign .card-sign .card-title-sign .title {
+	padding: 8px 17px;
+}
+.body-sign .line-thru:after {
+    left: 0;
+    top: 47%;
+    width: 100%;
+}
+.body-sign .btn-outline-secondary.btn-block {
+	border-color: #ced4da;
+}
+.body-sign .btn-outline-secondary.btn-block:hover,
+.body-sign .btn-outline-secondary.btn-block:focus,
+.body-sign .btn-outline-secondary.btn-block:active {
+    color: #6c757d;
+    background-color: #e9ecef;
+}
+.body-sign .btn-outline-secondary.btn-block img {
+    max-width: 40px;
+}
+.body-sign .card-sign .card-body {
+	padding: 1rem;
+}
+.v-center {
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center;
+	height: 100vh;
+}
+.body-sign .v-center img {
+	max-height: 450px;
+}
+.body-sign .card-sign .card-title-sign .title {
+	padding: 2px 17px;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+	.userbox:after {
+		background: #E9E9E6;
+		content: '';
+		 height: auto; 
+		margin: 0;
+		position: absolute;
+		right: -21px;
+		top: -18px;
+		width: 1px;
+	}
+	.topbar {
+    	display: block;
+		padding: 10px 15px;
+	}
+	.topbar div {
+		-webkit-flex: auto;
+		-ms-flex: auto; 
+		flex: auto;
+	}
+	.logo {
+		display: inline;
+	}
+	.right-nav {
+		display: inline;
+		float: right;
+	}
+	.userbox {
+		float: none;
+		margin: 0;
+		position: relative;
+	}
+	.notifications {
+		float: none;
+		margin: 4px -10px 0 0;
+	}
+	.right-nav .separator {
+		margin: 0 0 0 15px;
+		min-height: 30px;
+	}
+}
+
+
