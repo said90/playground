@@ -55,7 +55,6 @@ var contracts=[
         provided: 'Legal  Dept, New York',
         checkingMethod: 'Standard email to suppliers advising the organization current address and requesting same from the supplier',
         checkingMethodType:'Systematically',
-
         owner:"John smith"
        }
     ]
@@ -65,29 +64,7 @@ var source;
 $(document).ready(function () {
   var index;
   var indexSelected;
-  var table2 = $("#table-task").DataTable({
-    data: source,
-    responsive: true,
-    columns: [
-      { data: "details" },
-      { data: "checkingMethodType" },
-      { data: "checkingMethod" },
-      { data: "checkFrecuency" },
-
-      { data: "provided"},
-      { data: "owner" },
-      {
-        data: null,
-        defaultContent:
-          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
-      },
-    ],           
-    bDestroy: true,     
-    paging: true,
-    ordering: true,
-  });  
-
-var table = $("#table").DataTable({
+  var table = $("#table").DataTable({
     data: contracts,
     responsive: true,
     columns: [
@@ -106,8 +83,55 @@ var table = $("#table").DataTable({
       },
     ],                
     paging: true,
-    ordering: true,
+  }); 
+
+
+
+
+  var table2 = $("#table-task").DataTable({
+    data: source,
+    responsive: true,
+    columns: [
+      { data: "details" },
+      { data: "checkingMethodType" },
+      { data: "checkingMethod" },
+      { data: "checkFrecuency" },
+      { data: "provided"},
+      { data: "owner" },
+      {
+        data: null,
+        defaultContent:
+          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
+      },
+    ],           
+    bDestroy: true,     
+    paging: true,
   });  
+
+  $('#confirm-button-task').on("click", function () {
+    var task = {
+      details: $('#task-detail').val(),
+      checkingMethodType:$('#check-method-type').val(),
+      checkingMethod: $('#task-checking-method').val(),
+      checkFrecuency:$('#check-frecuency').val(),
+      provided: $('#provided-task').val(),
+      owner: $('#task-owner').val()
+    };
+    contracts[index-1].task.push(task);
+    table2.clear();
+    table2.rows.add(contracts[index-1].task);
+    table2.draw();
+      $('#task-detail').val('');
+      $('#check-method-type').val('');
+      $('#task-checking-method').val('');
+      $('#check-frecuency').val('');
+      $('#provided-task').val('');
+      $('#clause-owner-task').val('');
+      $('#modal-task').modal('hide');
+  });
+
+
+ 
 
   $('#modalForm').draggable({
     handle:".card-header"
@@ -131,17 +155,21 @@ var table = $("#table").DataTable({
     $('#confirm-button').html( "Modify");
     $("#clause-number").val(row.cells[0].innerHTML);
     $("#clause").val(row.cells[1].innerHTML);
-    $("#clause-detail").val(row.cells[2].innerHTML);
-    $("#critical-level").val(row.cells[3].innerHTML);
-    $("#clause-owner").val(row.cells[4].innerHTML);
+    $("#clause-subject").val(row.cells[2].innerHTML);
+    $("#clause-summary").val(row.cells[3].innerHTML);
+    $("#clause-type").val(row.cells[4].innerHTML);
+    $("#critical-level").val(row.cells[5].innerHTML);
+    $('#clause-owner').val(row.cells[6].innerHTML);
   });
 
   $('#modalForm').on('hidden.bs.modal', function (e) {
-    $("#clause-number").val('');
-    $("#clause").val('');
-    $("#clause-detail").val('');
-    $("#critical-level").val('');
-    $("#clause-owner").val('');
+    $('#clause-number').val('');
+    $('#clause').val('');
+    $('#clause-subject').val('');
+    $('#clause-summary').val('');
+    $('#clause-type').val('');
+    $('#critical-level').val('');
+    $('#clause-owner').val('');
   });
 
   $('#modal-task').on('hidden.bs.modal', function (e) {
@@ -175,7 +203,9 @@ var table = $("#table").DataTable({
     
 		var clauseNumber = $('#clause-number').val();
 		var clause = $('#clause').val();
-		var clauseDetail = $('#clause-detail').val();
+    var clauseSubject = $('#clause-subject').val();
+    var clauseSummary = $('#clause-summary').val();
+    var clauseType = $('#clause-type').val();
 		var criticalLevel = $('#critical-level').val();
 		var clauseOwner = $('#clause-owner').val();
 		var t = $('#table').DataTable();
@@ -183,7 +213,9 @@ var table = $("#table").DataTable({
 		var clauseData= {
 	      Clause:       clause,
         No:   clauseNumber,
-        Details:    clauseDetail,
+        Subject:    clauseSubject,
+        Summary: clauseSummary,
+        Type:clauseType,
         Critically: criticalLevel,
         Owner:     clauseOwner,
         task:[]
@@ -191,7 +223,9 @@ var table = $("#table").DataTable({
   
   $('#clause-number').val('');
   $('#clause').val('');
-  $('#clause-detail').val('');
+  $('#clause-subject').val('');
+  $('#clause-summary').val('');
+  $('#clause-type').val('');
   $('#critical-level').val('');
   $('#clause-owner').val('');
   console.log(index);
@@ -204,9 +238,11 @@ var table = $("#table").DataTable({
       var rows = document.getElementById("table").rows;
       rows[index].cells[0].innerHTML =clauseNumber;
       rows[index].cells[1].innerHTML=clause;
-      rows[index].cells[2].innerHTML=clauseDetail;
-      rows[index].cells[3].innerHTML=criticalLevel;
-      rows[index].cells[4].innerHTML=clauseOwner;
+      rows[index].cells[2].innerHTML=clauseSubject;
+      rows[index].cells[3].innerHTML=clauseSummary;
+      rows[index].cells[4].innerHTML=clauseType;
+      rows[index].cells[5].innerHTML=criticalLevel;
+      rows[index].cells[6].innerHTML=clauseOwner;
 
 
     }else{
@@ -255,27 +291,7 @@ var table = $("#table").DataTable({
 
   });
   
-  $('#confirm-button-task').on("click", function () {
-    console.log($('#clause-owner-task').val());
-    var task = {
-      checkFrecuency:$('#check-frecuency').val(),
-      details: $('#task-detail').val(),
-      provided: $('#provided-task').val(),
-      checkingMethod: $('#task-checking-method').val(),
-      owner: $('#clause-owner-task').val()
-    };
-    contracts[index-1].task.push(task);
-    table2.clear();
-    table2.rows.add(contracts[index-1].task);
-    table2.draw();
-      $('#check-frecuency').val('');
-      $('#task-detail').val('');
-      $('#provided-task').val('');
-      $('#task-checking-method').val('');
-      $('#clause-owner-task').val('');
-      $('#modal-task').modal('hide');
-  });
-
+  
 $('#table').on("click","tr", function(e){
     if (typeof contracts[this.rowIndex-1].task != undefined) {
       table2.clear();

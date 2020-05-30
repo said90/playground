@@ -1365,7 +1365,7 @@
                         <form>
                           <div class="form-row">
                             <div class="form-group col-md-6 mb-3 mb-lg-0">
-                              <label for="inputPassword4">Clause Number</label>
+                              <label for="clause-number">Clause Number</label>
                               <input
                                 type="text"
                                 class="form-control"
@@ -1376,7 +1376,7 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                              <label for="inputEmail5">Clause</label>
+                              <label for="clause">Clause</label>
                               <input
                                 type="text"
                                 class="form-control"
@@ -1386,30 +1386,30 @@
                               />
                             </div>
                             <div class="form-group col-md-12">
-                              <label for="inputEmail4">Subject*</label>
+                              <label for="clause-subject">Subject*</label>
                               <input
                                 type="text"
                                 class="form-control"
                                 id="clause-subject"
-                                placeholder="Clause details"
+                                placeholder="Subject"
                                 required
                               />
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="inputPassword4" style="height: 2rem;"
+                            <label for="clause-summary" style="height: 2rem;"
                               >Summary*</label
                             >
                             <input
                               type="text"
                               class="form-control"
                               id="clause-summary"
-                              placeholder="Clause Number"
+                              placeholder="Clause Summary"
                               required
                             />
                           </div>
                           <div class="form-group" style="margin-top: 1rem;">
-                            <label for="critical-level">Type*</label>
+                            <label for="clause-type">Type*</label>
                             <select
                               id="clause-type"
                               data-plugin-selectTwo
@@ -1440,7 +1440,7 @@
                             </select>
                           </div>
                           <div class="form-group">
-                            <label for="inputAddress2">Owner*</label>
+                            <label for="clause-owner">Owner*</label>
                             <input
                               type="text"
                               class="form-control"
@@ -1449,7 +1449,6 @@
                             />
                           </div>
                           <hr />
-                          <div class="form-row"></div>
                         </form>
                       </div>
                       <footer class="card-footer">
@@ -1485,7 +1484,7 @@
               role="dialog"
               aria-labelledby="staticBackdropLabel"
               aria-hidden="true"
-            >
+>
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-body">
@@ -1496,7 +1495,7 @@
                       <div class="card-body">
                         <form>
                           <div class="form-group ">
-                            <label for="inputEmail5">Details *</label>
+                            <label for="task-detail">Details *</label>
                             <input
                               type="text"
                               class="form-control"
@@ -1507,21 +1506,22 @@
                           </div>
                           <div class="form-group ">
                               <label
-                                for="inputPassword4"
+                                for="check-method-type"
                                 style="margin-top: 1rem;"
                                 >Checking Method Type *</label
                               >
                               <select
-                                id="check-frecuency"
+                                id="check-method-type"
                                 data-plugin-selectTwo
                                 class="form-control populate"
                               >
                                 <option value="Manually">Manually</option>
                                 <option value="Systematically">Systematically</option>
                               </select>
+                              
                             </div>
                             <div class="form-group " style="margin-top: 1rem;">
-                              <label for="critical-level"
+                              <label for="task-checking-method"
                                 >Checking Method *</label
                               >
                               <input
@@ -1531,8 +1531,8 @@
                                 placeholder="Checking Method"
                               />
                             </div>
-                            <div class="form-group ">
-                              <label for="inputPassword4"
+                            <div class="form-group "
+                              <label for="check-frecuency"
                                 >Check Frequency *</label
                               >
                               <select
@@ -1552,7 +1552,7 @@
                             
                             </div>
                             <div class="form-group ">
-                              <label for="inputEmail4">Provided By *:</label>
+                              <label for="provided-task">Provided By *:</label>
                               <input
                                 type="text"
                                 class="form-control"
@@ -1561,7 +1561,7 @@
                               />
                             </div>
                           <div class="form-group ">
-                            <label for="inputAddress2">Owner *</label>
+                            <label for="task-owner">Owner *</label>
                             <input
                               type="text"
                               class="form-control"
