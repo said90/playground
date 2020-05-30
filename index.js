@@ -79,7 +79,7 @@ $(document).ready(function () {
       {
         data: null,
         defaultContent:
-          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
+          "<td class='actions'>      <button type='button' class='btn btn-warning btn-clause-modify' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
       },
     ],                
     paging: true,
@@ -99,7 +99,7 @@ $(document).ready(function () {
       {
         data: null,
         defaultContent:
-          "<td class='actions'>      <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#modalForm'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
+          "<td class='actions'>      <button type='button' class='btn btn-warning btn-task-modify' data-toggle='modal' data-target='#modal'><i class='fas fa-pencil-alt'></i></button> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalForm'><i class='far fa-trash-alt'></i></button> </td>",
       },
     ],           
     bDestroy: true,     
@@ -123,7 +123,7 @@ $(document).ready(function () {
     index='';
   });
 
-  $("#table").on("click", ".btn-warning", function (e) {
+  $("#table").on("click", ".btn-clause-modify", function (e) {
     var $this = $(this);
     index= this.parentNode.parentNode.rowIndex;
     var row = this.parentNode.parentNode;
@@ -131,9 +131,12 @@ $(document).ready(function () {
     $('#confirm-button').html( "Modify");
     $("#clause-number").val(row.cells[0].innerHTML);
     $("#clause").val(row.cells[1].innerHTML);
-    $("#clause-detail").val(row.cells[2].innerHTML);
-    $("#critical-level").val(row.cells[3].innerHTML);
-    $("#clause-owner").val(row.cells[4].innerHTML);
+    $("#clause-subject").val(row.cells[2].innerHTML);
+    $("#clause-summary").val(row.cells[3].innerHTML);
+    $("#clause-type").val(row.cells[4].innerHTML);
+    $("#critical-level").val(row.cells[5].innerHTML);
+    $("#clause-owner").val(row.cells[6].innerHTML);
+
   });
 
   $('#modalForm').on('hidden.bs.modal', function (e) {
@@ -196,11 +199,6 @@ $(document).ready(function () {
   $('#clause-owner').val('');
   console.log(index);
     if (index) {
-      // contracts[index-1].task = typeof contracts[index-1].task !=undefined ? contracts[index-1].task :[];
-      // contracts[index-1] = clauseData;
-      // table.clear();
-      // table.rows.add(contracts);
-      // table.draw();
       var rows = document.getElementById("table").rows;
       rows[index].cells[0].innerHTML =clauseNumber;
       rows[index].cells[1].innerHTML=clause;
@@ -284,21 +282,7 @@ $('#table').on("click","tr", function(e){
     }else{
       table2.clear();
       table2.draw();
-    }
-        
-    // if (this.rowIndex == 2) {
-
-    //   table2.clear();
-    //     table2.rows.add(contracts[1].task);
-    //    table2.draw();
-    // };
-
-    // if (this.rowIndex == 3) {
-    //   table2.clear();
-    //   table2.rows.add(contracts[2].task);
-    //   table2.draw();
-    // };
-    
+    }  
 
 }); 
  
