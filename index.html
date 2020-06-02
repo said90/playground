@@ -72,7 +72,7 @@
 
       }
       .btn-clause-modify{
-        
+
       }
     </style>
   </head>
@@ -1368,22 +1368,11 @@
                   <div class="modal-body">
                     <section class="card">
                       <header class="card-header">
-                        <h2 class="card-title">Adding New Clause</h2>
+                        <h2 id="header-modal" class="card-title">Adding New Clause</h2>
                       </header>
                       <div class="card-body">
                         <form>
                           <div class="form-row">
-                            <div class="form-group col-md-6 mb-3 mb-lg-0">
-                              <label for="clause-number">Clause Number</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="clause-number"
-                                placeholder="Clause Number"
-                                value="1"
-                              />
-                            </div>
-
                             <div class="form-group col-md-6">
                               <label for="clause">Clause</label>
                               <input
@@ -1391,9 +1380,21 @@
                                 class="form-control"
                                 id="clause"
                                 placeholder="clause"
+                                value="1"
+                              />
+                            </div>
+                            <div class="form-group col-md-6 mb-3 mb-lg-0">
+                              <label for="clause-number">Clause Number</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="clause-number"
+                                placeholder="Clause Number"
                                 value="1.1"
                               />
                             </div>
+
+                            
                             <div class="form-group col-md-12">
                               <label for="clause-subject">Subject*</label>
                               <input
@@ -1540,7 +1541,7 @@
                                 placeholder="Checking Method"
                               />
                             </div>
-                            <div class="form-group "
+                            <div class="form-group ">
                               <label for="check-frecuency"
                                 >Check Frequency *</label
                               >
